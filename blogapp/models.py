@@ -6,54 +6,43 @@ from django.urls import reverse
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
-        return super().get_queryset()\
-                      .filter(status=Post.Status.PUBLISHED)
+        return super(PublishedManager, self).get_queryset().filter(status='published')
 
 
 class Post(models.Model):
-
-    class Status(models.TextChoices):
-        DRAFT = 'DF', 'Draft'
-        PUBLISHED = 'PB', 'Published'
-
+    STATUS_CHOICES = (
+        ('draft', 'Draft'),
+        ('published', 'Published'),
+    )
     title = models.CharField(max_length=250)
-    slug = models.SlugField(max_length=250,
-                            unique_for_date='publish')
-    author = models.ForeignKey(User,
-                               on_delete=models.CASCADE,
-                               related_name='blog_posts')
+    slug = models.SlugField(max_length=250, unique_for_date='publish')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    status = models.CharField(max_length=2,
-                              choices=Status.choices,
-                              default=Status.DRAFT)
-
-    objects = models.Manager() # The default manager.
-    published = PublishedManager() # Our custom manager.
+    status = models.CharField(max_length=10,
+                              choices=STATUS_CHOICES,
+                              default='draft')
 
     class Meta:
-        ordering = ['-publish']
-        indexes = [
-            models.Index(fields=['-publish']),
-        ]
+        ordering = ('-publish',)
 
     def __str__(self):
         return self.title
 
+    objects = models.Manager()
+    published = PublishedManager()
+
     def get_absolute_url(self):
-        return reverse('blog:post_detail',
+        return reverse('blogapp:post_detail',
                        args=[self.publish.year,
                              self.publish.month,
-                             self.publish.day,
-                             self.slug])
+                             self.publish.day, self.slug])
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post,
-                             on_delete=models.CASCADE,
-                             related_name='comments')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
@@ -62,10 +51,7 @@ class Comment(models.Model):
     active = models.BooleanField(default=True)
 
     class Meta:
-        ordering = ['created']
-        indexes = [
-            models.Index(fields=['created']),
-        ]
+        ordering = ('created',)
 
     def __str__(self):
         return f'Comment by {self.name} on {self.post}'
