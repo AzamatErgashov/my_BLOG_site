@@ -2,14 +2,12 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/templates/blog/post/form.html" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="jdk" jdkName="~/Desktop/django/model_blog_from_book/venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
-  <component name="PackageRequirementsSettings" />
-  <component name="PyDocumentationSettings" />
-  <component name="ReSTService" />
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">
       <list>
@@ -17,5 +15,4 @@
       </list>
     </option>
   </component>
-  <component name="TestRunnerService" />
 </module>

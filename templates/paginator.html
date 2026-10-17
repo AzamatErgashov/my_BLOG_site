@@ -1,22 +1,13 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{% block title %}{% endblock %}</title>
-    <link href="{% static "css/blog.css" %}" rel="stylesheet">
-</head>
-
-<body>
-
-<div id="content">
-    {% block content %}
-    {% endblock %}
+<div class="pagination">
+ <span class="step-links">
+ {% if page.has_previous %}
+     <a href="?page={{ page.previous_page_number }}">Avvalgi</a>
+ {% endif %}
+     <span class="current">
+ Page {{ page.number }} of {{ page.paginator.num_pages }}.
+ </span>
+     {% if page.has_next %}
+         <a href="?page={{ page.next_page_number }}">Keyingi</a>
+     {% endif %}
+ </span>
 </div>
-
-<div id="sidebar">
-    <h2>IT-NEWS</h2>
-    <p>Informatsion texnologiyalarga oid yangiliklar sayti</p>
-</div>
-
-</body>
-</html>
