@@ -7,7 +7,7 @@
 
 
 
-![image alt](https://github.com/AzamatErgashov/register_backend/blob/237845c7b01385f730a814a329f66dd3215a686c/Screenshot%202026-09-29%20at%2015.22.43.png)
+![image alt](https://github.com/AzamatErgashov/my_BLOG_site/blob/afb7d6f840df4ff236f26e66e4136d90d0c43531/Screenshot%202026-10-19%20at%2014.16.16.png)
 
 
 
