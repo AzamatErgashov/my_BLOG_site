@@ -12,4 +12,4 @@
 
 
 
-![image alt](https://github.com/AzamatErgashov/register_backend/blob/20a5e26e423f97a5555e6765afbb11b1406ab52e/Screenshot%202026-09-29%20at%2015.22.16.png)
+![image alt](https://github.com/AzamatErgashov/my_BLOG_site/blob/6af8485dc518a00991d47ec06aab4039a9683723/Screenshot%202026-10-19%20at%2014.16.33.png)
