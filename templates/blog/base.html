@@ -8,8 +8,18 @@
     <title>{% block title %}My Blog{% endblock %}</title>
 
     <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+    <script src="{% static 'js/image-trail.js' %}" defer></script>
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
+
+<div
+    id="image-trail"
+    data-image-base="{% static 'images/trail/' %}"
+    data-image-count="57"
+    data-image-extension="jpg"
+    aria-hidden="true"
+></div>
+
 
     <header class="site-header">
         <a href="{% url 'home' %}" class="site-logo">My Blog.</a>

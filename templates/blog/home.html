@@ -1,45 +1,59 @@
-
 {% extends "blog/base.html" %}
+{% load static %}
 
-{% block title %}Home | My Blog{% endblock %}
+{% block title %}Home | Azamat Ergashov{% endblock %}
+
+{% block body_class %}home-page{% endblock %}
 
 {% block content %}
-<section class="home-hero">
-    <p class="eyebrow">BOOKS · IDEAS · TECHNOLOGY</p>
 
-    <h1>Ideas worth reading.<br>Knowledge worth sharing.</h1>
+<section class="profile-home">
 
-    <p class="intro">
-        A personal space for books, technology,
-        programming and ideas worth exploring.
-    </p>
+    <!-- Profile picture -->
+    <div class="profile-home__portrait">
+        <img
+            src="{% static 'images/azamat.jpg' %}"
+            alt="Azamat Ergashov"
+        >
+    </div>
 
-    <a href="{% url 'blogapp:post_list' %}" class="button">
-        Explore the blog →
-    </a>
+    <!-- Introduction -->
+    <div class="profile-home__content">
+
+        <p class="profile-home__eyebrow">
+            BOOKS · CODE · IDEAS
+        </p>
+
+        <h1>Azamat Ergashov</h1>
+
+        <h2>IT Student · Backend Developer</h2>
+
+        <p class="profile-home__description">
+            I write about Python, Django, backend development,
+            books, and ideas worth exploring.
+        </p>
+
+        <!-- Navigation links -->
+        <div class="profile-home__actions">
+
+            <a
+                href="{% url 'blogapp:post_list' %}"
+                class="profile-home__button"
+            >
+                Read Blog <span>→</span>
+            </a>
+
+            <a
+                href="{% url 'about' %}"
+                class="profile-home__about"
+            >
+                About Me ↗
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="latest-posts">
-    <h2>Latest articles</h2>
-
-    {% for post in latest_posts %}
-        <article class="post">
-            <p class="date">{{ post.publish|date:"M d, Y" }}</p>
-
-            <h3>
-                <a href="{{ post.get_absolute_url }}">
-                    {{ post.title }}
-                </a>
-            </h3>
-
-            <p>{{ post.content|truncatewords:25 }}</p>
-        </article>
-    {% empty %}
-        <p>No articles published yet.</p>
-    {% endfor %}
-
-    <a href="{% url 'blogapp:post_list' %}">
-        View all articles →
-    </a>
-</section>
 {% endblock %}
