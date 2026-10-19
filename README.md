@@ -2,7 +2,7 @@
 <h1>this is my first little django project. i use youtube for create html, css, js. Howerver i created django backend from zero</h1>
 
 ## Screenshot
-![image alt](https://github.com/AzamatErgashov/register_backend/blob/0deac1a6041aecaf19adf6af0f00f0689df81e7b/Screenshot%202026-09-30%20at%2014.40.10.png)
+![image alt](https://github.com/AzamatErgashov/my_BLOG_site/blob/2dc805379a1b7d44f2958df53fb85fe722d66bff/Screenshot%202026-10-19%20at%2014.13.49.png)
 
 
 
