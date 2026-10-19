@@ -13,3 +13,9 @@
 
 
 ![image alt](https://github.com/AzamatErgashov/my_BLOG_site/blob/6af8485dc518a00991d47ec06aab4039a9683723/Screenshot%202026-10-19%20at%2014.16.33.png)
+
+
+
+
+
+![image alt](https://github.com/AzamatErgashov/my_BLOG_site/blob/e2507de581fdee7cbfd6f991b64bab3955cbf454/Screenshot%202026-10-19%20at%2014.16.49.png)
