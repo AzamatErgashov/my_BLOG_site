@@ -13,7 +13,7 @@ a {
 
 h1 {
     font-weight: normal;
-    border-bottom: 1px solid #bbb;
+    border-bottom: 1px solid #4c4646;
     padding: 0 0 10px 0;
 }
 
@@ -142,4 +142,119 @@ p {
 
 .pagination span {
     font-weight: bold;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    color: #242424;
+    background: #faf9f6;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    border-bottom: 1px solid #dedbd4;
+    gap: 20px;
+}
+
+.site-logo {
+    color: #242424;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navigation {
+    display: flex;
+    gap: 24px;
+}
+
+.navigation a {
+    color: #444;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    color: #a05a32;
+}
+
+#content {
+    min-height: 65vh;
+    padding: 40px 0;
+}
+
+.site-footer {
+    padding: 24px 0;
+    border-top: 1px solid #dedbd4;
+    color: #777;
+    font-size: 14px;
+}
+
+.home-hero {
+    max-width: 720px;
+    padding: 55px 0;
+}
+
+.home-hero h1,
+.about-page h1 {
+    font-size: clamp(36px, 6vw, 60px);
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+
+.eyebrow {
+    color: #a05a32;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.intro {
+    max-width: 560px;
+    color: #666;
+    font-size: 18px;
+}
+
+.latest-posts {
+    margin: 30px 0;
+}
+
+.post {
+    padding: 20px 0;
+    border-bottom: 1px solid #dedbd4;
+}
+
+.post h3 a {
+    color: #242424;
+    text-decoration: none;
+}
+
+.post h3 a:hover {
+    color: #a05a32;
+}
+
+.date {
+    color: #888;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .navigation {
+        gap: 18px;
+    }
 }

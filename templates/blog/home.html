@@ -1,0 +1,45 @@
+
+{% extends "blog/base.html" %}
+
+{% block title %}Home | My Blog{% endblock %}
+
+{% block content %}
+<section class="home-hero">
+    <p class="eyebrow">BOOKS · IDEAS · TECHNOLOGY</p>
+
+    <h1>Ideas worth reading.<br>Knowledge worth sharing.</h1>
+
+    <p class="intro">
+        A personal space for books, technology,
+        programming and ideas worth exploring.
+    </p>
+
+    <a href="{% url 'blogapp:post_list' %}" class="button">
+        Explore the blog →
+    </a>
+</section>
+
+<section class="latest-posts">
+    <h2>Latest articles</h2>
+
+    {% for post in latest_posts %}
+        <article class="post">
+            <p class="date">{{ post.publish|date:"M d, Y" }}</p>
+
+            <h3>
+                <a href="{{ post.get_absolute_url }}">
+                    {{ post.title }}
+                </a>
+            </h3>
+
+            <p>{{ post.content|truncatewords:25 }}</p>
+        </article>
+    {% empty %}
+        <p>No articles published yet.</p>
+    {% endfor %}
+
+    <a href="{% url 'blogapp:post_list' %}">
+        View all articles →
+    </a>
+</section>
+{% endblock %}

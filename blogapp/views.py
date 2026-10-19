@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Post
 from .forms import EmailPostForm, CommentForm
 from django.views.generic import ListView
-
+from django.views.generic import TemplateView
 
 class PostListView(ListView):
     queryset = Post.published.all()
@@ -64,3 +64,15 @@ def post_share(request, post_id):
     return render(request, 'blog/post/share.html', {'post': post,
                                                     'form': form,
                                                     'sent': sent})
+
+class HomeView(TemplateView):
+    template_name = 'blog/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['latest_posts'] = Post.published.all()[:3]
+        return context
+
+
+class AboutView(TemplateView):
+    template_name = 'blog/about.html'
