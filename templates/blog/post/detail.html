@@ -6,6 +6,13 @@
         Published {{ post.publish }} by {{ post.author }}
     </p>
     {{ post.body|linebreaks }}
+{% if post.image %}
+    <img
+        src="{{ post.image.url }}"
+        alt="{{ post.title }}"
+        class="article-image"
+    >
+{% endif %}
 
     <p>
         <a href="{% url "blogapp:post_share" post.id %}">
