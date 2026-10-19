@@ -218,3 +218,41 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Local settings
+config/settings.py
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local database
+db.sqlite3
+db.sqlite3-journal
+
+# User uploads — ignore only if stored outside Git
+media/
+
+# Generated static files
+staticfiles/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# IDE settings
+.idea/
+.vscode/

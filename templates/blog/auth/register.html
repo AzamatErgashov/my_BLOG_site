@@ -1,0 +1,39 @@
+
+{% extends "blog/base.html" %}
+
+{% block title %}Register | My Blog{% endblock %}
+
+{% block content %}
+<section class="auth-page">
+
+    <p class="auth-eyebrow">JOIN THE COMMUNITY</p>
+
+    <h1>Create your account.</h1>
+
+    <p class="auth-intro">
+        do id
+    </p>
+
+    <form method="post" class="auth-form">
+        {% csrf_token %}
+
+        <input type="hidden" name="next" value="{{ next }}">
+
+        {{ form.as_p }}
+
+        <button type="submit" class="auth-submit">
+            Create account <span>→</span>
+        </button>
+    </form>
+
+    <p class="auth-switch">
+        Already have an account?
+        <a href="{% url 'login' %}">Log in</a>
+    </p>
+
+    <p class="auth-back">
+        <a href="{% url 'blogapp:post_list' %}">← Back to the blog</a>
+    </p>
+
+</section>
+{% endblock %}

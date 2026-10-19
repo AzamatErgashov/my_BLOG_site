@@ -1,0 +1,40 @@
+
+{% extends "blog/base.html" %}
+
+{% block title %}Log in | My Blog{% endblock %}
+
+{% block content %}
+<section class="auth-page">
+
+    <p class="auth-eyebrow">WELCOME BACK my guest</p>
+
+    <h1>Good to see you</h1>
+
+    <p class="auth-intro">
+        Log in to continue using your account.
+        You can still read and comment on the blog as a guest
+    </p>
+
+    <form method="post" class="auth-form">
+        {% csrf_token %}
+
+        <input type="hidden" name="next" value="{{ next }}">
+
+        {{ form.as_p }}
+
+        <button type="submit" class="auth-submit">
+            Log in <span>→</span>
+        </button>
+    </form>
+
+    <p class="auth-switch">
+        Don't have an account?
+        <a href="{% url 'register' %}">Create one</a>
+    </p>
+
+    <p class="auth-back">
+        <a href="{% url 'blogapp:post_list' %}">← Back to the blog</a>
+    </p>
+
+</section>
+{% endblock %}
